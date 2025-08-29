@@ -1,0 +1,98 @@
+/* Container */
+.contact {
+  padding: 50px 20px;
+  background: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Flex container */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+/* Image */
+.contact-image img {
+  max-width: 300px;
+  max-height: 500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.contact-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  gap: 20px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+}
+
+/* Inputs & textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: auto;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Textarea specific */
+textarea {
+  resize: none;
+  min-height: 150px;
+}
+
+/* Button */
+button {
+  padding: 15px 20px;
+  background: #1565c0;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
