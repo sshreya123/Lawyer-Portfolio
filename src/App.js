@@ -14,14 +14,16 @@ function App() {
       {/* Navbar */}         
       <Navbar />
       <h1 style={{ textAlign: "center", marginTop: "80px" }}>
-        Welcome to Abhishek Giri’s Portfolio (Criminal Lawyer)
-      </h1>
+  Welcome – You’re in the Right Place for Trusted Legal Support
+</h1>
+
       <Hero />
       <About />
       <Services/>
       <WhyChooseMe/>
+       <Contact/>
       <Testimonials/>
-      <Contact/>
+     
       <Footer/>
     </div>
   );
