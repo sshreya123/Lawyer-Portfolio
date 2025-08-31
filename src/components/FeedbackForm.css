@@ -1,11 +1,19 @@
+/* --- Base container --- */
 .feedback-form {
+  width: 100%;
   max-width: 600px;
-  margin: 50px auto;
-  padding: 30px 25px;
+  margin: 40px auto 24px;
+  padding: clamp(16px, 4vw, 30px) clamp(16px, 5vw, 25px);
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+/* Make every child use border-box so 100% width includes padding/border */
+.feedback-form,
+.feedback-form * {
+  box-sizing: border-box;
 }
 
 .feedback-form h2 {
@@ -15,19 +23,22 @@
   font-weight: 600;
 }
 
+/* Use grid for clean vertical rhythm */
 .feedback-form form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 18px;
 }
 
 .feedback-form input,
 .feedback-form textarea {
-  width: 100%; /* Full width inside container */
+  width: 100%;
+  max-width: 100%;
   padding: 14px 16px;
   border-radius: 10px;
   border: 1px solid #d1d1d1;
-  font-size: 1rem;
+  font-size: 16px;          /* prevents iOS zoom on focus */
+  line-height: 1.4;
   outline: none;
   transition: border 0.3s, box-shadow 0.3s;
 }
@@ -43,29 +54,26 @@
   min-height: 120px;
 }
 
+/* Stars */
 .rating-stars {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 12px;
+  flex-wrap: wrap;          /* allow wrapping on very small screens */
 }
 
 .star {
   cursor: pointer;
-  font-size: 28px;
+  font-size: clamp(22px, 6vw, 28px);  /* scales down on small screens */
   color: #ccc;
   transition: color 0.3s, transform 0.2s;
 }
-.star.filled {
-  color: #ffcc00; /* Yellow for selected stars */
-}
-.star:hover {
-  transform: scale(1.2);
-}
+.star:hover { transform: scale(1.1); }
+.star.selected,
+.star.filled { color: #ffcc00; }
 
-.star.selected {
-  color: #ffcc00;
-}
-
+/* Button */
 .feedback-form button {
   padding: 15px 20px;
   background: #1565c0;
@@ -77,8 +85,18 @@
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 .feedback-form button:hover {
   background: #155ab6;
   transform: translateY(-2px);
+}
+
+/* --- Mobile tweaks --- */
+@media (max-width: 480px) {
+  .feedback-form { margin: 24px 12px; }
+  .feedback-form h2 { font-size: 1.3rem; }
+  .feedback-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
 }

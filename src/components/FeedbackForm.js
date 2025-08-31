@@ -33,7 +33,7 @@ const FeedbackForm = ({ addTestimonial }) => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <textarea
+        <textarea 
           placeholder="Write your feedback..."
           value={feedback}
           onChange={(e) => setFeedback(e.target.value)}
