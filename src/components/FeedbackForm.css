@@ -1,102 +1,68 @@
-/* --- Base container --- */
-.feedback-form {
+.feedback-wrapper {
   width: 100%;
-  max-width: 600px;
-  margin: 40px auto 24px;
-  padding: clamp(16px, 4vw, 30px) clamp(16px, 5vw, 25px);
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Make every child use border-box so 100% width includes padding/border */
-.feedback-form,
-.feedback-form * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
+.feedback-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 30px;
+  background: #fff;
+  border-radius: 20px;
+  /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); */
+  text-align: center;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+}
+
 .feedback-form h2 {
-  margin-bottom: 25px;
-  color: #1e1e1e;
-  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
-/* Use grid for clean vertical rhythm */
 .feedback-form form {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 15px;
 }
 
 .feedback-form input,
 .feedback-form textarea {
   width: 100%;
-  max-width: 100%;
-  padding: 14px 16px;
+  padding: 12px;
   border-radius: 10px;
   border: 1px solid #d1d1d1;
-  font-size: 16px;          /* prevents iOS zoom on focus */
-  line-height: 1.4;
+  font-size: 15px;
   outline: none;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-.feedback-form input:focus,
-.feedback-form textarea:focus {
-  border: 1px solid #1e90ff;
-  box-shadow: 0 0 6px rgba(30, 144, 255, 0.3);
+  box-sizing: border-box;
 }
 
 .feedback-form textarea {
-  resize: none;
-  min-height: 120px;
+  min-height: 100px;
+  resize: vertical;
 }
 
-/* Stars */
 .rating-stars {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;          /* allow wrapping on very small screens */
+  gap: 10px;
+  margin: 10px 0;
 }
 
 .star {
   cursor: pointer;
-  font-size: clamp(22px, 6vw, 28px);  /* scales down on small screens */
-  color: #ccc;
-  transition: color 0.3s, transform 0.2s;
 }
-.star:hover { transform: scale(1.1); }
-.star.selected,
-.star.filled { color: #ffcc00; }
 
-/* Button */
 .feedback-form button {
-  padding: 15px 20px;
+  padding: 12px 20px;
   background: #1565c0;
   color: #fff;
-  font-size: 1.1rem;
   border: none;
   border-radius: 10px;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-.feedback-form button:hover {
-  background: #155ab6;
-  transform: translateY(-2px);
-}
-
-/* --- Mobile tweaks --- */
-@media (max-width: 480px) {
-  .feedback-form { margin: 24px 12px; }
-  .feedback-form h2 { font-size: 1.3rem; }
-  .feedback-form button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-  }
 }

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com"; // or "@emailjs/browser"
 import "./Contact.css";
 import HC3 from "../assets/HC3.jpg";
+import FeedbackForm from "./FeedbackForm";
 
 const Contact = () => {
   const form = useRef();
@@ -55,6 +56,7 @@ const Contact = () => {
 
           {status && <p className="form-status">{status}</p>}
         </form>
+
       </div>
     </section>
   );

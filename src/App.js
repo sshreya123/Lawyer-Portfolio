@@ -7,24 +7,31 @@ import WhyChooseMe from "./components/WhyChooseMe";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import FeedbackForm from "./components/FeedbackForm";
 
 function App() {
   return (
     <div className="App">
-      {/* Navbar */}         
       <Navbar />
       <h1 style={{ textAlign: "center", marginTop: "80px" }}>
-  Welcome – You’re in the Right Place for Trusted Legal Support
-</h1>
+        Welcome – You’re in the Right Place for Trusted Legal Support
+      </h1>
 
       <Hero />
       <About />
-      <Services/>
-      <WhyChooseMe/>
-       <Contact/>
-      <Testimonials/>
-     
-      <Footer/>
+      <Services />
+      <WhyChooseMe />
+      <Contact />
+
+      {/* Centered Feedback Form */}
+      <div className="feedback-wrapper">
+        <FeedbackForm />
+      </div>
+
+      {/* Testimonials Section */}
+      {/* <Testimonials /> */}
+
+      <Footer />
     </div>
   );
 }
